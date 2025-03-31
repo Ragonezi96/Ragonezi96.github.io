@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+body {
+  background-color: #0d1117; /* Black background */
+  color: #ffffff; /* Default white text */
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Hero Section */
+.hero-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #1f2937; /* Dark gray background */
+}
+
+/* Navigation Buttons */
+.nav-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid transparent;
+  background-color: #1f2937; /* Gray background */
+  color: white;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-button:hover {
+  background-color: #4f46e5; /* Indigo background */
+  color: white;
+}
+
+.nav-button.active {
+  background-color: #4f46e5; /* Indigo background */
+  color: white;
+}
+
+/* Sections Container */
+.sections-container {
+  position: relative;
+  height: 100vh; /* Full screen height */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+/* Section Styles */
+.section {
+  position: absolute;
+  top: 0;
+  left: 100%; /* Start off-screen */
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.5s ease-in-out;
+  padding-top: 0rem; /* Reduced padding at the top */
+  padding-bottom: 3rem; /* Reduced padding at the bottom */
+}
+
+.section.active {
+  left: 0; /* Move into view */
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* MacOS Window Container */
+.macos-container {
+  width: 90%; /* Adjust width as needed */
+  max-width: 1200px;
+  background-color: transparent; /* Transparent background */
+  border-radius: 10px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* MacOS Window Header */
+.macos-header {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #2d3748; /* Slightly darker gray */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* MacOS Circles */
+.macos-circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.macos-circle.red {
+  background-color: #ff5f56; /* Red */
+}
+
+.macos-circle.yellow {
+  background-color: #ffbd2e; /* Yellow */
+}
+
+.macos-circle.green {
+  background-color: #27c93f; /* Green */
+}
+
+/* Circles Container */
+.macos-circles {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+/* Slider Styles */
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+
+.content {
+  flex-shrink: 0;
+  margin-right: 30px;
+  text-align: center;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Light Effect on Slider Edges */
+.slider-fade-left,
+.slider-fade-right {
+  position: absolute;
+  top: 0;
+  width: 100px; /* Adjust the width of the fade */
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.slider-fade-left {
+  left: 0;
+  background: linear-gradient(to right, rgba(13, 17, 23, 1), rgba(13, 17, 23, 0));
+}
+
+.slider-fade-right {
+  right: 0;
+  background: linear-gradient(to left, rgba(13, 17, 23, 1), rgba(13, 17, 23, 0));
+}
+
+/* Get in Touch Section */
+.get-in-touch {
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #1f2937;
+  color: white;
+  text-align: center;
+}
+
+.get-in-touch h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.get-in-touch p {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: #d1d5db;
+}
+
+.get-in-touch a {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #4f46e5;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.get-in-touch a:hover {
+  background-color: #4338ca;
+}
