@@ -1,7 +1,8 @@
 const nextConfig = {
   reactStrictMode: true,
-  output: "export",
-  assetPrefix: "/", // important for GitHub Pages
+  output: 'export',
+  basePath: '',
+  assetPrefix: './', 
   images: {
     unoptimized: true,
   },
