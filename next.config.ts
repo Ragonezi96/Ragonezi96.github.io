@@ -1,8 +1,8 @@
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
-  basePath: '',
-  assetPrefix: './', 
+  assetPrefix: './',              // ✅ Use relative asset paths
+  trailingSlash: true,            // ✅ Helps static routing work
   images: {
     unoptimized: true,
   },
