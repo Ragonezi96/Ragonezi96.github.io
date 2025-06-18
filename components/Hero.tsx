@@ -12,7 +12,7 @@ export default function Hero() {
           </span>
         </h1>
         <p className="text-gray mt-6 text-xl md:text-2xl">
-          Data Engineer | Building scalable data pipelines & insights
+          Senior Data Platform Engineer | Building scalable data pipelines & infrastructure
         </p>
         <a
           href="#main-sections"

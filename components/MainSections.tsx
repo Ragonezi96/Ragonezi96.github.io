@@ -4,6 +4,7 @@ import Experience from "./Experience";
 import MyProjects from "./Projects";
 import MyResume from "./Resume";
 import GetInTouch from "./GetInTouch";
+import Certifications from "./Certifications";
 
 export default function MainSections() {
   const [activeSection, setActiveSection] = useState("about");
@@ -13,66 +14,56 @@ export default function MainSections() {
   };
 
   return (
-    <div className="main-sections">
-      {/* Navigation Buttons */}
-      <div className="navigation-buttons flex justify-center gap-4 py-4 bg-black text-white sticky top-0 z-10">
-        <button
-          className={`nav-button ${activeSection === "about" ? "active" : ""}`}
-          onClick={() => handleNavigation("about")}
-        >
-          About Me
-        </button>
-        <button
-          className={`nav-button ${activeSection === "experience" ? "active" : ""}`}
-          onClick={() => handleNavigation("experience")}
-        >
-          Experience
-        </button>
-        <button
-          className={`nav-button ${activeSection === "projects" ? "active" : ""}`}
-          onClick={() => handleNavigation("projects")}
-        >
-          My Projects
-        </button>
-        <button
-          className={`nav-button ${activeSection === "resume" ? "active" : ""}`}
-          onClick={() => handleNavigation("resume")}
-        >
-          My Resume
-        </button>
-      </div>
-
-      {/* Sections Container */}
-      <div className="sections-container relative overflow-hidden">
-        <div
-          className={`section ${activeSection === "about" ? "active" : ""}`}
-          id="about"
-        >
-          <AboutMe />
+    <div className="main-sections bg-black min-h-screen py-10 flex justify-center">
+      <div className="w-full max-w-4xl border border-white rounded-lg overflow-hidden shadow-lg bg-black">
+        {/* Sticky navigation inside the container, no border */}
+        <div className="sticky top-0 z-20 bg-black flex justify-center gap-4 py-6">
+          <button
+            className={`nav-button ${activeSection === "about" ? "active" : ""}`}
+            onClick={() => handleNavigation("about")}
+          >
+            About Me
+          </button>
+          <button
+            className={`nav-button ${activeSection === "experience" ? "active" : ""}`}
+            onClick={() => handleNavigation("experience")}
+          >
+            Experiences
+          </button>
+          {/* <button
+            className={`nav-button ${activeSection === "projects" ? "active" : ""}`}
+            onClick={() => handleNavigation("projects")}
+          >
+            Projects
+          </button> */}
+          <button
+            className={`nav-button ${activeSection === "certifications" ? "active" : ""}`}
+            onClick={() => handleNavigation("certifications")}
+          >
+            Certifications
+          </button>
+          <button
+            className={`nav-button ${activeSection === "resume" ? "active" : ""}`}
+            onClick={() => handleNavigation("resume")}
+          >
+            Resume
+          </button>
+          <button
+            className={`nav-button ${activeSection === "contact" ? "active" : ""}`}
+            onClick={() => handleNavigation("contact")}
+          >
+            Contact
+          </button>
         </div>
-        <div
-          className={`section ${activeSection === "experience" ? "active" : ""}`}
-          id="experience"
-        >
-          <Experience />
+        {/* Section content */}
+        <div className="bg-black p-8">
+          {activeSection === "about" && <AboutMe />}
+          {activeSection === "experience" && <Experience />}
+          {/* {activeSection === "projects" && <MyProjects />} */}
+          {activeSection === "certifications" && <Certifications />}
+          {activeSection === "resume" && <MyResume />}
+          {activeSection === "contact" && <GetInTouch />}
         </div>
-        <div
-          className={`section ${activeSection === "projects" ? "active" : ""}`}
-          id="projects"
-        >
-          <MyProjects />
-        </div>
-        <div
-          className={`section ${activeSection === "resume" ? "active" : ""}`}
-          id="resume"
-        >
-          <MyResume />
-        </div>
-      </div>
-
-      {/* Get in Touch Section */}
-      <div id="get-in-touch" className="section">
-        <GetInTouch />
       </div>
     </div>
   );
