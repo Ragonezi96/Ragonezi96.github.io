@@ -1,6 +1,6 @@
 export default function GetInTouch() {
   return (
-    <section id="contact" className="py-16 bg-black">
+    <section id="contact" className="bg-black">
       <div className="container mx-auto text-center px-6">
         <h2 className="text-3xl font-extrabold text-white mb-6">
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-purple-600 to-blue-600">

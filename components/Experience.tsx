@@ -59,7 +59,7 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-16 bg-black">
+    <section id="experience" className="bg-black">
       <div className="container mx-auto px-2 sm:px-4">
         <h2 className="text-3xl font-extrabold text-center text-white mb-12">
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-purple-600 to-blue-600">

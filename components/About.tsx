@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section id="about" className="py-16 bg-black">
+    <section id="about" className="bg-black">
       <div className="container mx-auto flex flex-col md:flex-row items-center md:items-start text-center md:text-left px-6 gap-8">
         {/* Photo */}
         <div className="photo-container flex-shrink-0">
